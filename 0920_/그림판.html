@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+
+  .color-btn{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+  }
+
+  .color-btn[data-color=black]{
+    background-color: black;
+  }
+
+  .color-btn[data-color=red]{
+    background-color: red;
+  }
+
+  .color-btn[data-color=green]{
+    background-color: green;
+  }
+
+  .color-btn[data-color=blue]{
+    background-color: blue;
+  }
+
+
+</style>
+</head>
+<body>
+  <canvas class="canvas1" width="600" height="400" style="background: #eee;"></canvas>
+
+<div class="control">
+  <button class="color-btn" data-color="black"></button>
+  <button class="color-btn" data-color="red"></button>
+  <button class="color-btn" data-color="green"></button>
+  <button class="color-btn" data-color="blue"></button>
+</div>
+
+<button class="save-image">이미지저장</button>
+<div class="result-save"></div>
+
+  <script>
+    const canvas = document.querySelector('canvas')
+    const ctx = canvas.getContext('2d')
+    const pointSize = 5;
+
+    const saveBtn = document.querySelector(.Yaho)
+    let drawingMode;
+
+    function downHandler(){
+      drawingMode = true;
+    }
+
+    function upHandler(){
+      drawingMode = false;
+    }
+
+
+    function moveHandler(e){
+      if(!drawingMode) return;
+      ctx.beginPath();
+      // 마우스의 위치값을 arc의 위치값으로 지정
+      ctx.arc(e.offsetX, e.offsetY, pointSize, 0, Math.PI*2, false)
+      ctx.fill()
+    }
+
+    canvas.addEventListener('mouseup', upHandler)
+    canvas.addEventListener('mousedown', downHandler)
+    canvas.addEventListener('mousemove', moveHandler)
+  </script>
+</body>
+</html>

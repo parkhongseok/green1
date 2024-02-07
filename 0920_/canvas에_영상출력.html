@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+.video{
+  width: 0; height: 0;
+  position: absolute;
+}
+
+
+</style>
+</head>
+<body>
+  <video src="../image/video.mp4" class="video" autoplay uted loop></video>
+  <canvas class="canvas" width="600" height="400">
+    이 브라우저는 집에 가고 싶습니다.
+  </canvas>
+  <script>
+    const canvas = document.querySelector('.canvas')
+    const ctx = canvas.getContext('2d')
+
+    ctx.textAlign = 'center'
+    ctx.fillText('비디오 로딩중', 300, 200)
+    ctx.font = 'bold 50x serif'
+    ctx.fillStyle = '#fff'
+
+    const videoEl = document.querySelector('.video')
+
+    videoEl.addEventListener('canplaythrough', render)
+    const messages = 
+    [
+      {time: 1, message: 'ㅋㅋ', x:100, y:100},
+      {time: 3, message: 'ㅋㅋㅋ', x:300, y:300},
+      {time: 5, message: 'ㅋㅋㅋㅋ', x:500, y:200},
+    ]
+
+
+    function render(){
+      //영상을 캔버스에 그려주는 작업
+      ctx.drawImage(videoEl, 0, 0, 600, 400)
+      for(let i=0; i<messages.length; i++){
+
+        if(videoEl.currentTime > messages[i].time)
+        ctx.fillText(messages[i].message, messages[i].x, messages[i].y)
+      
+      
+      }
+
+
+
+
+      requestAnimationFrame(render);//rAF를 사용하는 이유는 프레임별로 켄버스에 그려서 영상을 표현하는 것이라서다.
+
+    }
+  
+  </script>
+
+</body>
+</html>

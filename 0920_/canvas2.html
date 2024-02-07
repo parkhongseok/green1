@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <canvas class="canvas1" width="600" height="400" style="background: #eee;">
+  <script>
+    const canvas = document.querySelector('canvas')
+    const ctx = canvas.getContext('2d')
+  
+    let xPos = 10;
+    //반복구간설정
+    let count = 0;
+    let timerId;
+    n
+    function draw(){
+      count++;
+      if(count % 30 === 0){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.arc(xPos, 150, 5, 0, Math.PI*2, false)
+        ctx.fill();
+        xPos += 5;
+        requestAnimationFrame(draw)}
+    }
+    draw();//draw함수 호출
+  
+  
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{box-sizing: border-box;}
+    ul{margin: 0; padding: 0; list-style: none;}
+    ul li{
+      cursor: pointer;
+      position: relative;
+      padding: 12px 8px 12px 40px;
+      background-color: #eee;
+      font-size: 18px;
+      transition: 0.2s;
+      user-select: none; 
+      /* 항목을 ㄷ드래그 불가능ㅇ하기ㅏ 만들기 */
+    }
+
+
+    ul li:nth-child(odd){
+      background-color: #f8f9f9;
+    }
+
+    ul li:hover{
+      background-color: skyblue;
+    }
+
+    ul li.checked{
+      background-color: #888;
+      color: #fff;
+      text-decoration: line-through;
+    }
+
+    ul li.checked::before{
+      content: '';
+      width: 7px;
+      height: 15px;
+      position: absolute;
+      border-color: #fff;
+      border-style: solid;
+      border-width: 0 2px 2px 0;
+      top: 12px; left: 18px;
+      transform: rotate(45deg);
+    }
+
+.close{
+  position: absolute;
+  right: 0; top: 0;
+  padding: 12px 16px;
+}
+
+.close:hover{
+  background-color: #f44336;
+  color: white;
+}
+
+.header{
+  background-color: #000000;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+.header::after{
+  content: "";
+  display: block;
+  clear:both;
+}
+
+input{
+  margin:0;
+  float:left;
+  width:75%;
+  font-size: 16px;
+  border: none;
+  padding: 10px;
+}
+.addBtn{
+  float: left;
+  width: 25%;
+  border: none;
+  background-color: #d9d9d9;
+  color: #555;
+  padding:10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.addBtn:hover{
+  color:#fff;
+  background-color: #bbb;
+}
+
+  </style>
+</head>
+
+<body>
+  <div id="myDiv" class="header">
+    <h1>대굴대굴내인생</h1>
+    <input type="text" id="myInput" placeholder="얼렁뚱땅나으하루">
+    <button type="button" class="addBtn">Add</button>
+  </div>
+
+  <ul id="myUl">
+    <li>집에가기</li>
+    <li class="checked">낮잠자기</li>
+    <li>오버워치하기</li>
+    <li>그림그리기</li>
+  </ul>
+
+
+  <script>
+    const myList = document.querySelectorAll('li');
+    //forEach
+    myList.forEach(list => addCloseBtn(list));
+
+    function addCloseBtn(list){
+      const span = document.createElement('span');
+      const txt = document.createTextNode('\u00d7');
+
+      span.setAttribute('class', 'close');
+      span.appendChild(txt);
+      list.appendChild(span)
+    }
+
+const closes=document.querySelectorAll('.close');
+closes.forEach(close => closeEvent(close));
+function closeEvent(close){
+  close.addEventListener('click', ()=>{
+    const parent = close.parentElement;
+    parent.style.display='none'
+  })
+};
+  
+
+  //목록항목을 클릭하면 집에 가기
+  const list = document.querySelector('#myUl')
+  list.addEventListener('click', (e)=>{
+    if(e.target.tagName==='LI'){
+      console.dir(e.target)
+      e.target.classList.toggle('checked')
+    } 
+  })
+
+  //cnrkqjxms zmfflrtl to ahrfhr gkdahr todtjdgkrl
+  const addBtn = document.querySelector('.addBtn')
+  addBtn.addEventListener('click',()=>{
+    const li = document.createElement('li')
+    const myInput = document.querySelector('#myInput')
+    const inputValue = myInput.value;
+    const txt = document.createTextNode(inputValue)
+    li.appendChild(txt)
+    if(inputValue === ""){
+      alert("집에 가고 싶지 않으십니까.")
+    }else{
+      list.appendChild(li);
+    }
+    myInput.value = '';
+    addCloseBtn(li);
+    const close = li.querySelector('.close')
+    closeEvent(close)
+  })
+
+  </script>
+</body>
+</html>
