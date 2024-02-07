@@ -1,0 +1,59 @@
+@media (min-width: 1132px) {
+  .display-section {
+    text-align: left;
+  }
+  .display-section .sec-tit {
+    float: left;
+    margin-bottom: 0;
+  }
+  .display-section .desc {
+    position: relative;
+    float: right;
+    padding-left: 20px;
+    font-family: "PT serif";
+    color: #616161;
+    line-height: 1.9;
+  }
+  .display-section .desc:before {
+    display: block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 2px;
+    height: 44px;
+    background: #e0e0e0;
+    content: "";
+  }
+  .promotion-section .promo-list li {
+    width: 23.67491166%;
+    margin-left: 1.76667%;
+  }
+  .work-section .sec-tit {
+    text-align: left;
+  }
+  .blog-section .sec-tit {
+    float: left;
+    margin-bottom: 0;
+  }
+  .blog-section .blog-list {
+    float: right;
+    width: 74.55830388%;
+  }
+  .blog-section .blog-list li {
+    width: 31.753%;
+    margin-left: 2.3697%;
+  }
+  .contact-section .sec-tit {
+    float: left;
+  }
+  .contact-section .sec-tit .form-box {
+    float: right;
+    width: 74.56%;
+  }
+  .contact-section .sec-tit .form-box .form, .contact-section .sec-tit .form-box .textarea {
+    width: 48.845%;
+  }
+  .contact-section .sec-tit .form-box .form {
+    margin-right: 2.3697%;
+  }
+} /*pc end*//*# sourceMappingURL=pc.css.map */

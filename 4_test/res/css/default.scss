@@ -1,0 +1,9 @@
+@import 'reset';
+
+//모든 프로젝트에 css가 모바일부터 만들어진다
+//모바일 > 테블릿 > PC  순서로 잡는다
+
+
+@import 'mobile';
+@import 'tab';
+@import 'pc';

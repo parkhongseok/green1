@@ -1,0 +1,9 @@
+1) 먼저 git 설치
+2) vscode에서 해당 파일 열고 initiallize repository 클릭
+3) 터미널 창을 실행하여 아래를 입력한다. 
+
+git config --global user.email "123qkrghdtjr@gmail.com"
+git config --global user.name "park"
+
+좌측 창에 버튼을 누르고 ctrl + enter를 누르자
+야호

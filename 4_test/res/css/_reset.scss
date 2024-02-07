@@ -1,0 +1,53 @@
+// @import 'reset';
+@charset "utf-8"; 
+// 캐릭터 인코딩을 utf8로 설정한다.
+
+html, html * {
+  margin: 0; padding: 0; border: 0; outline: 0;
+  font-size: 100%; background-color: transparent;
+}
+
+html{
+  font-size: 16px; 
+  // = 1 rem
+  body{
+    font-family: 'Montserrat', DroidSans, AppleSDGothicNeo, Sans-serif, Helvetica;
+    line-height: 1; //100%가 1이다.
+    article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section{
+      display: block;
+    }
+    nav{
+      ul{
+        li{
+          list-style: none;
+        }
+      }
+    }
+    a{margin: 0; padding: 0; font-size: 100%; background-color: transparent; text-decoration: none;}
+    img{vertical-align: top; }
+    hr{display: block; height: 2px; border: 0; margin: 0; padding: 0;}
+    input, textarea{
+      width: 100%; margin: 0; padding: 0; border: 0;
+      border-bottom: 1px solid #757575; color: #3f51b5;
+      font-family: 'Montserrat'; font-size:.75rem ;
+      vertical-align: top; //고전적인 방식이라 잘 적용이 안된다.
+      border-radius: 0;
+      box-sizing: content-box; /*size에 영향을 주는 걸 허용함*/
+      appearance: none; 
+    }
+    input{
+      ::-moz-input-placeholder{
+        color: #3f51b5;
+      }
+    }
+    textarea{
+      ::-webkit-textarea-placeholder{
+        //safari를 겨냥하여 
+        color: #3f51b5;
+      }
+    }
+    ul, ol, li {
+      list-style: none;
+    }
+  }
+}
