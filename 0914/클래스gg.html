@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    class Person{
+      constructor(name){
+        this.name = name; // name 프로퍼티는 public하다.
+      }
+      sayHi(){
+        console.log(`my name is ${this.name}`)
+      }
+      static sayHello(){
+        console.log('hello!')
+      }
+    }
+    const me = new Person('lee')
+
+    console.log(me.name)
+    me.sayHi();
+    Person.sayHello();
+
+    class Person2{
+      constructor(firstName, lastName)
+      {
+        this.firstName = firstName;
+        this.lastName = lastName;
+      }
+
+      get fullName(){
+        return `${this.firstName} ${this.lastName}`;
+      }
+
+      set fullName(name){
+        [this.firstName, this.lastName] = name.split(' ')
+      }
+    }
+
+    const me1 = new Person2('Minkyu', 'Jang');
+
+    console.log(me1.firstName, me1.lastName)
+    console.log(me1.fullName)
+
+
+  </script>
+
+
+
+
+
+</body>
+</html>

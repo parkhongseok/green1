@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    function getThisBinding(){
+      console.log(arguments);
+      return this;
+    }
+
+
+
+    const thisArg = {
+      a : 1
+    }
+    // getThisBinding(thisArg, [1, 2, 3])
+
+    console.log('*******')
+    getThisBinding.apply(thisArg, [4, 5, 6])
+  
+    // console.log()
+
+
+
+
+
+  </script>
+</body>
+</html>
+
+<!-- 
+중복함수 내 사용되는 this는 전역 객체를 바인딩하는 오류가 있고, 
+따라서 이를 일치시키는 방법은 세가지가 있는데 
+
+하나는 내부함수에 화살표함수를 사용하는 것, 
+하나는 this를 변수에 할당하여 사용하는 것, 
+하나는 (apply, call), bind라는 메서드를 사용하는 것이다.  -->

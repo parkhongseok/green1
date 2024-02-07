@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const circle = 
+    {
+      radius : 5,
+      getDiameter()
+      {
+        return 2*circle.radius;
+      }
+    }
+    console.log(circle.getDiameter());
+
+    const circle2 = {
+      radius :5,
+      getDiameter(){
+        return 2*this.radius;
+      }
+    }
+    console.log(circle2.getDiameter());
+
+    function Circle2(radius){
+      this.radius = radius;
+    }
+    Circle2.prototype = function(){
+      return2*this.radius;
+    }
+
+    const circle3 = new Circle2(5);
+    
+    function square(number){
+      console.log(this)
+      return number*number;
+    }
+    square(2);
+
+    function foo(){
+      'use strict'
+      console.log(this);
+    }
+    foo();
+
+    console.log('********1********')
+
+
+
+    //---------------------------------/
+    var value =1 ;
+
+    const obj = {
+      value :100,
+      foo(){
+        console.log('foo this = ', this) // foo
+        console.log('foo this.value =', this.value)
+        
+        console.log('********2********')
+
+        function bar(){
+          console.log('foo this = ', this) // foo
+          console.log('foo this.value =', this.value)
+        }
+        bar()
+      }
+    }
+obj.foo()
+
+
+
+
+
+
+
+  </script>
+
+
+
+
+</body>
+</html>
