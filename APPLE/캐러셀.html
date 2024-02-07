@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>캐러셀 만들기</title>
+  
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<body>
+  <div class="box">
+    <div class="container">
+      <div class="img1">
+        <img src="/img/58.jpg" alt="">
+      </div>
+      <div class="img2">
+        <img src="/img/59.jpg" alt="">
+      </div>
+      <div class="img3">
+        <img src="/img/60.jpg" alt="">
+      </div>
+      <div class="img4">
+        <img src="/img/61.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="btn">
+    <button type="button">1</button>
+    <button type="button">2</button>
+    <button type="button">3</button>
+    <button type="button">4</button>
+  </div>
+
+  <div class="nbbtn">
+    <div class="before"></div>
+    <div class="after"></div>
+  </div>
+  <script>
+
+    $("button:nth-child(1)").on('click', ()=>{
+      $('.container').css('transform', 'translateX(0vw)')
+    })
+
+    $("button:nth-child(2)").on('click', ()=>{
+      $('.container').css('transform', 'translateX(-100vw)')
+    })
+
+    $("button:nth-child(3)").on('click', ()=>{
+      $('.container').css('transform', 'translateX(-200vw)')
+    })
+
+    $("button:nth-child(4)").on('click', ()=>{
+      $('.container').css('transform', 'translateX(-300vw)')
+    })
+
+
+  let pageNum = 1;
+
+  $(".before").on('click', ()=>{
+    
+    if( pageNum == 1){
+      $('.container').css('transform', 'translateX(-300vw)')
+      pageNum = 4
+    }else if( pageNum == 2){
+      $('.container').css('transform', 'translateX(0vw)')
+      pageNum = 1
+    }else if( pageNum == 3){
+      $('.container').css('transform', 'translateX(-100vw)')
+      pageNum = 2
+    }else if( pageNum == 4){
+      $('.container').css('transform', 'translateX(-200vw)')
+      pageNum = 3
+    }
+  })
+
+
+
+  $(".after").on('click', ()=>{
+    
+    if( pageNum == 1){
+      $('.container').css('transform', 'translateX(-300vw)')
+      pageNum = 4
+    }else if( pageNum == 2){
+      $('.container').css('transform', 'translateX(0vw)')
+      pageNum = 1
+    }else if( pageNum == 3){
+      $('.container').css('transform', 'translateX(-100vw)')
+      pageNum = 2
+    }else if( pageNum == 4){
+      $('.container').css('transform', 'translateX(-200vw)')
+      pageNum = 3
+    }
+  })
+
+
+
+
+  </script>
+
+
+</body>
+</html>
+<style>
+*{
+  margin: 0; padding: 0;
+}
+
+
+.nbbtn{
+  width: 100vw;
+  height: 50vw;
+  /* background-color: blanchedalmond; */
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  display: flex;
+  cursor: pointer;
+  
+}
+
+.before{
+  width: 50vw;
+  height: 50vw;
+  transition: all 0.3s;
+}
+
+.after{
+  width: 50vw;
+  height: 50vw;
+  transition: all 0.3s;
+}
+
+.before:hover{
+  width: 50vw;
+  height: 50vw;
+  background:rgba(0, 0, 0, 0.1);
+}
+
+.after:hover{
+  background:rgba(0, 0, 0, 0.1);
+}
+
+.box{
+  overflow: hidden;
+}
+
+  .container{
+    width: 400vw;
+    display: flex;
+    transition: all 1s ease;
+
+  }
+
+  img{
+    width: 100vw;
+    height: 50vw;
+  }
+
+  .btn{
+    text-align: center;
+  }
+</style>

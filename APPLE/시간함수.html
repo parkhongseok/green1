@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <h1>특가 세일 5초 안에 구매하면 공짜!</h1>
+    <div class="saleBox">
+      <p>남은 시간 <mark>5</mark> 초</p>
+      <button class="btn">구매하기</button>
+    </div>
+  </div>
+</body>
+
+<script>
+let t = 5
+  let Timer = setInterval(fx, 1000)
+  function fx(){
+    t--
+    document.querySelector('mark').innerText = t
+    if(t==0){
+      clearInterval(Timer)
+      document.querySelector('.container').style.display='none'
+    }
+  }
+
+
+
+</script>
+
+
+
+<style>
+  .container{
+    
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    border: 1px solid black;
+    padding: 30px;
+    background-color: gainsboro;
+  }
+  .container p {
+    font-size: large;
+  }
+
+  mark{
+    font-size: 30px;
+  }
+
+  .btn{
+    margin-top: 20px;
+    padding: 10px 80px;
+    font-size: large;
+  }
+</style>
+</html>
