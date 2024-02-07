@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bigint</title>
+</head>
+<body>
+  <h1>Big Int</h1>
+  <pre>
+    - javascript의 정수 정확도 : 최대 15자리까지만 정확하다.
+    - IEEE 754표준인데 최대 (2^53-1)부터 -(2^53-1)까지의 수를 벗어나면 정밀도를 잃습니다. 
+    
+  </pre>
+<script>
+  let x = 999999999999999; //15개의 9
+  let y = 9999999999999999; //16개의 9
+// 16개부터는 반올림되어버린다.
+  document.write(
+    x + "<br>" + y 
+  )
+</script>
+
+위의 예시처럼 부정확한 표현 때문에 big Int가 만들어짐 <br>
+bigint를 만드는 방법
+- 정수 끝에 n을 붙이거나,
+- BigInt(숫자)를 사용
+
+<p id="z"></p>
+<script>
+  let e = 123456789123456789n;
+  let t = BigInt("12345678912345678912345");
+
+  document.getElementById('z').innerHTML = e + '<br>' + t;
+</script>
+</body>
+</html>

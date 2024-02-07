@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bom</title>
+</head>
+<body onload="checkCookie()">
+  <h1>Browser Object Model</h1>
+  <pre>
+    BOM 객체
+    - window 
+        window.document.getElementById()
+        window.innerHeigh : 브라우저 창(viewport)의 내부 높이
+        window.innerWidth : 브라우저 창(viewport)의 내부 너비
+        window.open()
+        window.close()
+        window.move() : 현재 윈도우를 움직여준다. 
+        window.resizeTo() 
+
+    - screen : 사용자 화면에 대한 정보
+        screen.width, height, 
+        availWidth, availHeight (실제 사용 가능한 부분)
+        colorDepth, pixelDepth
+
+    - rocation : 를 사용하여 현재 페이지 주소(ULR)를 가져오고, 브라우저를 새 페이지로 re-direction 해준다. 
+        asa. location.assign
+
+    - history : 브라우저의 기록이 포함됩니다.
+        history.back() : 브라우저에서 뒤로 클릭
+        history.forward() : 브라우저를 앞으로 클릭
+
+    - navigator : 방문자의 브라우저에 대한 정보가 포함되어 있음 
+        navigator.cookieEnabled (쿠키의 활성화 여부에 따라 true or false)
+        navigator.appCodeName, platform
+
+    - poup alert : 경고창, 컨펌창, 프롬프트상자
+    
+    - timing :
+        setTimeout(), clearTimeout() 
+        setInterval(), clearInterval()
+
+    - Cookies (회원가입을 하면 세션을 할당받고 사용자의 정보를 쿠키에 담아준다.)
+  </pre>
+
+
+<mark id="app">
+</mark>
+  <script>
+goBack = ()=>{
+  window.history.back() //뒤로가기 버튼 기능 구현
+  //window.history.forward()   앞으로가기 버튼 기능 구현
+}
+
+document.getElementById('app').innerHTML = "navigator.cookieEnabled" + navigator.cookieEnabled
++"<br>"+"crom.appName is " + navigator.appName +
+"<br>" + "navigator.appCodeName is " + navigator.appCodeName;
+  </script>
+<input type="button" value="back" onclick="goback()">
+<button onclick="myC()">confirm</button>
+
+<script>
+  myC = () => {
+    let txt;//declare:선언
+    if (confirm("press a button!")){
+      txt = "you pressed OK!"; //OK버튼을 눌렀을 때와 취소버튼을 눌렀을 때
+    }else{
+      txt = 'You pressed Cancel!'
+    }
+    document.getElementById('ok').innerHTML = txt;
+  }
+</script>
+
+<h1>prompt</h1>
+<button onclick="myP()">이름을 입력하세요!</button>
+<p id="name"></p>
+
+<script>
+  myP = ()=>{
+    let text;
+    let person = prompt('당신의 이름을 입력하세요.', '황영일');
+
+    if (person == null || person == ""){
+      text = '캔슬버튼을 누르셨네요!';
+    } else {
+      text = "hello" + person + "How are you today"
+    }
+    document.getElementById('name').innerHTML = text;
+  }
+</script>
+
+<h1>cookies</h1>
+<pre>
+  - 컴퓨터에 작은 텍스트 파일로 저장되는 데이터이다. 
+  - 웹서버가 웹페이지를 브라우저로 보내면, 연결이 종료되고, 서버는 사용자에 대한 정보를 잊어버리기 때문에 발명된 것이 바로 쿠키이다. 
+  - '사용자에 대한 정보를 기억하는 방법' 문제를 기억하기 위해 발명되었습니다.
+</pre>
+
+<script>
+  //방문자의 이름을 쿠키 변수에 저장할 수 있도록 만들어 준다.
+  //cname은 쿠키이름, cvalue는 쿠키값, exdays[쿠키가 만료가 될 때까지의 일 수 ]
+  function setCoockie(cname, cvalue, exdays) { 
+    const d = new Data(); 
+    d.setTime(d.getTime() + (exdays*24*60*60*1000)); 
+    let expires = 'expires' + d.toUTCStringa();
+    document.cookie = cname + '=' + cavalue + ';' + expires + ";path=/";
+  } 
+  //위에 함수는 쿠키이름, 쿠키값, 만료 문자열을 추가하여 쿠키로 설정합니다.
+  //복호화 또는 디코딩(decoding, 암호해독)된 정보를 부호화되기 전으로 되돌리는 처리 혹은 처리방식을 이야기합니다.
+
+function getCookie(cname){ //쿠키를 얻는 함수
+    let name = cname + "="; 
+  //검색할 텍스트(cname + "=")를 사용하여 변수(이름)을 만듭니다.
+  let decodedCookie = decodeURIComponent(decument.cookie)
+  //쿠키를 긁어온다.  
+  let ca = decodedCookie.split(';');
+  //세미콜론으로 된 document.cookie를 ca라는 배열로 분할합니다. 
+  for (let i=0; i < ca.length; i++){
+    //변수 i가 변수 ca의 길이보다 작아지는 범위까지 i++을 반복하세요.
+    let c = ca[i] //0, 1 각각의 값을 읽어라.
+
+    //쿠키를 찾을 수 없다면 ""을 리턴하고,
+    //charAt string타입의 문자열에서 해당 위치에 있는 문자만(유니코드) 리턴
+    while (c.charAt(0) == ''){  
+      c=c.substring(1) 
+      //substring은 문자열의 특정 부분을 잘라내는 데 사용된다.
+    }
+    if(c.indexOf(name) == 0){
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie(){
+  //마지막으로 쿠키가 설정되었는지 확인하는 함수를 만들고, 
+  //쿠키가 설정되어 있으면 인사말이 표시되고,
+  //쿠키가 설정되어 있지 않은 경우에는 사용자 이름을 묻는 프롬프트 상자가 표시되고,
+  //다음 함수를 호출하여 쿠키를 365일동안 저장합니다.
+  let username = getCookie('username');
+  if (username != ""){//만약 쿠키가 있다면
+  alert("welcome again " + username);
+  }else {
+    username = prompt("please enter your name : ", "");
+    if(username != "" && username != null) {
+      setCookie('username', username, 365);
+    }
+  }
+
+}
+
+</script>
+
+
+
+</body>
+</html>

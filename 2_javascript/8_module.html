@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모듈</title>
+</head>
+<body>
+  <h1>Modules</h1>
+  <pre>
+    모듈을 사용하면 코드를 별도의 파일로 나눌 수 있다 
+    이를 통해 코드 기반을 더 쉽게 유지 관리할 수 있습니다
+    import로 가져오고 type='module'로 선언을 해야만 합니다.
+  </pre>
+  <mark id="find"></mark>
+  <script type="module">
+    import message from './message.js'
+    import person from './person.js'
+
+    document.getElementById('find').innerHTML = message();
+  </script>
+</body>
+</html>

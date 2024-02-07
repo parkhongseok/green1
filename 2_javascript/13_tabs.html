@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/tabs.css">
+  <!-- html내에서는 scss를 css라고 써준다 -->
+  <title>tabs</title>
+</head>
+<body>
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">
+    London
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">
+    Paris
+  </button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">
+    Tokyo
+  </button>
+  </div>
+  <!-- 내용 -->
+<div class="tabcontent" id="London">
+  <h3>London</h3>
+  <p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<div class="tabcontent" id="Paris">
+  <h3>Paris</h3>
+  <p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<div class="tabcontent" id="Tokyo">
+  <h3>Tokyo</h3>
+  <p>Lorem ipsum dolor sit amet.</p>
+</div>
+
+<script>
+  openCity = (evt, cityName) => {
+    var i, tabcontent, tablinks; //변수를 선언만 함
+    tabcontent = document.getElementsByClassName('tabcontent');
+
+    for(i=0; i < tabcontent.length; i++){
+      tabcontent[i].style.display = "none";
+      //tabcontent 각각의 스타일은 보이지 않게 설정하고
+    }
+
+    tablinks = document.getElementsByClassName('tablinks');
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "")
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  document.getElementById('defaultOpen').click();
+</script>
+</body>
+</html>

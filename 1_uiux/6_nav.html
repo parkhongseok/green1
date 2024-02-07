@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  >
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  >
+  </script>
+  <title>navbar</title>
+</head>
+<body>
+  <nav>
+    <div class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <!-- navbar-expand-sm 은 분기점을 스마트 폰으로 설정함 -->
+      <div class="container-fluid">
+        <a href="/" class="navbar-brand">WithYOU</a> <!--로고-->
+        <!-- <a href="/">WithYOU</a> 로 /을 설정하면 최초의 도매인으로 간다. -->
+        <!-- <a href="javascript:boid(0)">logo</a> 로 설정하면 움직임을 없앤다-->
+        <!-- 햄버거 버튼 -->
+        <button 
+        class="navbar-toggler" 
+        data-bs-toggle="collapse"
+        data-bs-target="#mynavbar"
+        >
+      <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav ms-auto">
+          <!-- mx-auto : margin0에 auto ,가운데에 메뉴 정렬 -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">카페</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">이벤트</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a 
+            href="#"
+            class="nav-link dropdown-toggle"
+            role="button"
+            data-bs-toggle="dropdown"
+            >지역별</a> 
+            <!-- one depth라고 부르고 이후로 더 들어가는 부분은 two depth -->
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#" class="dropdown-item">
+                  서울
+                </a>
+                <a href="#" class="dropdown-item">
+                  안산
+                </a>
+                <a href="#" class="dropdown-item">
+                  경기 
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">공지사항</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">about</a>
+          </li>
+        </ul>
+      </div>
+        
+
+<form action="jspdata.jsp" class="d-flex">
+  <input type="text" class="form-control" placeholder="Search">
+  <button class="btn btn-primary">
+    Search
+  </button>
+  <!-- form-control 는 width 100%를 의미한다.  -->
+</form>
+<!-- 이후에 백엔드에서 data를 받아오는 곳을 action이라고 함  -->
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="carousel slide" data-bs-ride="carousel" id="demo">
+    <div class="carousel-indicators">
+      <!-- 이미지가 들어가는 장 수 만큼 선언해야한다. -->
+      <button 
+      type="button" 
+      data-bs-target="#demo"
+      data-bs-slide-to="0"
+      class="active"
+      ></button>
+
+      <button 
+      data-bs-target="#demo" 
+      data-bs-slide-to="1"
+      ></button>
+
+      <button 
+      data-bs-target="#demo" 
+      data-bs-slide-to="2"
+      ></button>
+    </div>
+<!-- image를 insert -->
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img src="images/pic1.png" alt="image" class="w-100">
+    <div class="carousel-caption">
+      <h3 class="text-warning display-1">PICNIC</h3>
+      <h5>우리 오늘 피크닉 갈래?</h5>
+      <p class="text-center">
+        선선해진 날씨 <br/>
+        이맘때 딱 좋은 피크닉 <br/>
+        피크닉을 위한 도시락, <br/>
+      </p>
+    </div>
+  </div>
+
+  <div class="carousel-item">
+    <img src="images/images.jpg" alt="image" class="w-100">
+  </div>
+
+  <div class="carousel-item">
+    <img src="images/pic1.png" alt="image" class="w-100">
+  </div>
+
+<!-- left and right controls / icons -->
+<button 
+class="carousel-control-prev"
+data-bs-target="#demo"
+data-bs-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</button>
+
+<button 
+class="carousel-control-next"
+data-bs-target="#demo"
+data-bs-slide="next">
+<span class="carousel-control-next-icon"></span>
+</button>
+
+</div>
+  </div>
+
+
+</body>
+</html>
+
+<!-- 앞으로 남아 있는 것은 뭘까나>! 
+modal
+toast
+scrollspy
+offcanvas
+utilities
+flex
+form
+-->

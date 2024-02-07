@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  >
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  >
+  </script>
+  <title>component_4</title>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- 12의 법칙 몇칸에 써도 12가 나오면 된다. -->
+    <div class="col-md-3">
+<h1>List Groups</h1>
+<pre>
+  ul -> list-group 
+  li -> list-group-item
+  선택이 되어 있으면, class로 active를 추가 (사용하거나 현재 선택된 걸 의미합니다.)
+</pre>
+<ul class="list-group">
+  <li class="list-group-item active">first</li>
+  <li class="list-group-item">second</li>
+  <li class="list-group-item">third</li>
+</ul>
+    </div>
+    <div class="col-md-3">
+<h1>Flush / Remove Borders</h1>
+<pre>
+  .list-group-flush 사용하여 일부 테두리와 둥근 모서리를 제거합니다.
+</pre>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item active">first</li>
+  <li class="list-group-item">second</li>
+  <li class="list-group-item">third</li>
+</ul>
+    </div>
+    <div class="col-md-3">
+      <h1>번호가 매겨진 목록 그룹</h1>
+      <pre>
+        -.list-group-numbered 를 사용하여 숫자가 있는 목록항목을 만듭니다
+      </pre>
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item">first</li>
+        <li class="list-group-item">second</li>
+        <li class="list-group-item">third</li>
+      </ol>
+    </div>
+    <div class="col-md-3">
+      <h1>horizontal list groups</h1>
+      <pre>
+        ul -> .list-group-horizontal, .list-group
+        li -> .list-group-item
+      </pre>
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item">first item</li>
+        <li class="list-group-item">second item</li>
+        <li class="list-group-item">third item</li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-12">
+    
+    <h1 class="my-3">
+      Cards
+    </h1>
+    <pre>
+      - 카드는 콘텐츠 주위에 패딩과 테두리가 있는 상자입니다.
+      - 여기에는 머리글, 바닥글, 내용, 색상 등에 대한 옵션이 있습니다.
+    </pre>
+
+  </div>
+</div>
+
+
+
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <img src="/images/images.jpg" alt="pic" class="card-img-top w-100">
+        <div class="card-body">
+          <h4 class="card-title">@palsuop</h4>
+          <p class="card-text">
+            #카페 #브런치카페 #애견동반 <br>
+            와부읍 경강로 849번길 38-41
+          </p>
+          <a href="#" class="btn btn-primary">more</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="card">
+        <img src="/images/images.jpg" alt="pic" class="card-img-top w-100">
+        <div class="card-body">
+          <h4 class="card-title">@palsuop</h4>
+          <p class="card-text">
+            #카페 #브런치카페 #애견동반 <br>
+            와부읍 경강로 849번길 38-41
+          </p>
+          <a href="#" class="btn btn-primary">more</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <img src="/images/images.jpg" alt="pic" class="card-img-top w-100">
+        <div class="card-body">
+          <h4 class="card-title">@palsuop</h4>
+          <p class="card-text">
+            #카페 #브런치카페 #애견동반 <br>
+            와부읍 경강로 849번길 38-41
+          </p>
+          <a href="#" class="btn btn-primary">more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-md-3">
+      <h1>card overlay</h1>
+
+      <div class="card">
+        <img src="images/pic1.png" alt="pic" class="card-image-top">
+        <div class="card-img-overlay">
+          <h4 class="card-title">피카츄</h4>
+          <p class="card-text">삐까 삐까</p>
+          <a href="#" class="btn btn-warning">다른 몬스터 보러가기</a>
+        </div>
+      </div>
+
+    </div>
+
+
+
+    <div class="col-md-3">
+      <h1 class="my-3">Dropdown</h1>
+      <pre>
+        - 드롭다운 메뉴는 사용자가 미리 정의도니 목록에서 하나의 값을 선택할 수 있도록 하는 전환 가능한 메뉴입니다.
+        - .dropdown
+        -- .dropdown toggle
+        --- .dropdown-menu 
+        - 스크립트를 사용해야 합니다. (data-bs-toggle='dropdown')
+      </pre>
+      <div class="dropdown">
+        <button 
+        class="btn btn-outline-success dropdown-toggle" 
+        data-bs-toggle="dropdown"
+        >
+        드롭다운 메뉴
+      </button>
+
+
+        <ul class="dropdown-menu">
+
+          <li>
+            <a href="#" class="dropdown-item">
+              Link 1
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="dropdown-item">
+              Link 2
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="dropdown-item">
+              Link 3
+            </a>
+          </li>
+
+        </ul>
+
+
+        
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-3"></div>
+  </div>
+
+
+
+
+</div> <!--container end-->
+
+</body>
+</html>

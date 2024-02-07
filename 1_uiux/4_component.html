@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  >
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  >
+  </script>
+  <title>component_4</title>
+</head>
+<body>
+<div class="container-fluid">
+
+<div class="row">
+  <div class="col-md-3">
+    <h1>button-basic</h1>
+    <pre>
+    - 특징 : 가로크기가 허락하는 만큼 inline요소로 작동됩니다
+    블록형태로 사용하고 싶으시면 p, br을 사용해야 됩니다
+    - .btn btn-primary
+    - 부트스트랩에서 버튼 적용법 [button, a, input]
+    - 부트스트랩 버튼에 기본값은 버튼 opacity:
+    </pre>
+    <p><button class="btn">배경색과 언더라인 없는 버튼</button></p>
+    <p><button class="btn btn-primary btn-lg">primary</button></p>
+    <p><button class="btn btn-secondary btn-sm">secondary</button></p>
+    <p><button class="btn btn-success">success</button></p>
+    <p><button class="btn btn-info">info</button></p>
+    <p><button class="btn btn-warning">warning</button></p>
+    <p><button class="btn btn-danger">Danger</button></p>
+    <p><button class="btn btn-dark">Dark</button></p>
+    <p><button class="btn btn-light">light</button></p>
+    <p><button class="btn btn-link">link</button></p>
+    <p><a href="#" class="btn btn-danger">빨강</a></p>
+    <p><input type="submit" class="btn btn-success" value="녹색"></p>
+  </div>
+  <div class="col-md-3">
+    <h1>button-outline</h1>
+    <pre>
+      외곽 테두리로 보여지는 형태
+    -outline을 추가하면 테두리버튼 형태로 바뀝니다
+    </pre>
+<button class="btn btn-outline-warning">
+  Warning
+</button>
+  </div>
+  <div class="col-md-3">
+    <h1>button-size</h1>
+    <pre>
+      btn-lg, btn-sm
+    </pre>
+  </div>
+  <div class="col-md-3">
+    <h1>button-block</h1>
+    <div class="border">난 블록형 태그</div>
+    <pre>
+    1) div class="d-grid"
+    2) btn-block
+    </pre>
+    <div class="d-grid gap-3">
+      <button class="btn btn-danger btn-block">
+        Full-width button
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+      <h1>Disabled Buttons</h1>
+      <pre>
+      - 사용한다는 의미 active
+      - disabled
+      </pre>
+      <a href="#" class="btn btn-secondary active">active primary</a>
+      <a href="#" class="btn btn-secondary disabled">성별수정</a>
+  </div>
+  <div class="col-md-3">
+    <h1>button Groups</h1>
+    <pre>
+    - 가로형 : btn-group
+    - 세로형 : btn-group-vertical
+    - create read update delete 만들때 버튼그룹을 사용하시면 
+    좋습니다
+    - 방향설정을 해주는 class d-flex justify-content-end
+    </pre>
+
+    <div class="d-flex justify-content-end">
+
+      <div class="btn-group my-3">
+
+        <button class="btn btn-primary">쓰기</button>
+        <button class="btn btn-secondary">읽기</button>
+        <button class="btn btn-success">수정</button>
+        <button class="btn btn-danger">삭제</button>
+      
+      </div>
+
+
+    </div>
+
+  </div>
+  <div class="col-md-3">
+<h1>button group vertical</h1>
+<div class="btn-group-vertical">
+  <button class="btn btn-primary">Apple</button>
+  <button class="btn btn-primary">sony</button>
+</div>
+  </div>
+  <div class="col-md-3">
+<h1>Badges</h1>
+<pre>
+- 각진형태(badge) , 모서리라운드에 배지(rounded-pill)
+</pre>
+<button class="btn btn-warning">
+messages<span class="badge bg-danger">4</span>
+</button>
+<br>
+<span class="badge rounded-pill bg-primary">
+  Primary
+</span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <h1>pagenation</h1>
+    <pre>
+      - 페이지가 많은 웹사이트가 있는 경우 각 페이지의 일종의 페이지 매김
+      - 일정 기준 (list)에 10개의 글이 노출될 때 10개가 넘을 경우 페이지네이션 생성
+      - .pagination, .page-item
+      - .pagination-lg (큰 사이즈), .pagination-sm (작은 사이즈)
+      - justify-content-center (가운데 정렬)
+    </pre>
+    <ul class="pagination pagination-lg">
+<!-- ctrl shift L 누르면 동일 한 부분 전체 선택 -->
+      <li class="page-item">
+        <a href="#" class="page-link"></a> Previous </a>
+      </li>
+
+      <li class="page-item active">
+        <a href="#" class="page-link"></a> 1 </a>
+      </li>
+
+      <li class="page-item active">
+        <a href="#" class="page-link"></a> 2 </a>
+      </li>
+
+      <li class="page-item">
+        <a href="#" class="page-link"></a> next </a>
+      </li>
+
+    </ul>
+  </div>
+  <div class="col-md-3">
+    <h1>Breadcrumbs</h1>
+    <pre>
+      - 페이지 매김의 또 다른 형태의 탐색 경로
+      - breacrumb, .breadcrumb-item, 
+    </pre>
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Photos</a></li>
+      <li class="breadcrumb-item"><a href="#">winter 2023</a></li>
+      <li class="breadcrumb-item"><a href="#">green</a></li>
+      <li class="breadcrumb-item">303호</li>
+    </ul>
+  </div>
+  <div class="col-md-3"></div>
+  <div class="col-md-3"></div>
+</div>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3"></div>
+  <div class="col-md-3"></div>
+  <div class="col-md-3"></div>
+</div>
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>class</h2>
+  <pre>
+    es6에 도입
+    - 객체용 템플릿
+    constructor() : 객체 속성을 초기화 하는데 사용합니다.
+  </pre>
+
+  <script>
+    class Car{
+      constructor(name, year){
+        this.name = name,
+        this.year = year;
+        // this는 여기서 car을 의미
+      }
+      age(){
+        const date = new Date(); //상수 date는  date객체를 만듬
+        return date.getFullYear() - this.year;
+      }
+    }
+
+    const myCar = new Car('Ford', 2014)
+    document.write(
+      'My car is ' + myCar.age() + ' years old'
+    );
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>bootstrap_intro</title>
+  <link 
+  rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  >
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  >
+  </script>
+</head>
+<body>
+  <h1>bootstrap 사용법</h1>
+  <pre>
+  - cdn선언 
+  - 3(float),4,5(flex)버전중에 4,5버전만 사용해야 됩니다
+  - lg(데스크탑),md(태블릿),sm(스마트폰)을 사용해서 분기점을 
+    만들어 줍니다
+  </pre>
+
+  <h1>Container</h1>
+  <pre>
+  - 사이트 콘텐츠를 래핑하기 위해 사용하는 class
+  - 두가지 종류를 가지고 있습니다
+  - container-fluid (꽉차는 형태)
+  - container(인라인 60%~70%)  
+  - 둘다 패딩값을 가지고 있습니다 
+  - .row(display:flex)
+  - .col(3개로 분할하던지 하나만 쓰던지 하더라도 도합12
+  lg,md,sm
+  )
+  </pre>
+<div class="container-fluid border">
+  <div class="row">
+    <div class="col-12">
+      화면 전체가 full
+    </div>
+  </div>
+</div>
+
+<h1>container</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 border col-lg-6">
+      col-md-4
+    </div>
+    <div class="col-md-4 border col-lg-3">
+      col-md-4
+    </div>
+    <div class="col-md-4 border col-lg-3">
+      col-md-4
+    </div>
+  </div>
+</div>
+
+<h1>Fixed Container</h1>
+<pre>
+클래스 사용하여 .container반응형 고정 너비를 만듭니다  
+</pre>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="my-5">컨테이너 분기점</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>매우작음 < 576px</th>
+            <th>작음 ≥ 576px</th>
+            <th>중간 ≥ 768px</th>
+            <th>대형 ≥ 992px</th>
+            <th>초대형 ≥ 1200px</th>
+            <th>XXL ≥ 1400px</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>최대너비</td>
+            <td>100%</td>
+            <td>540px</td>
+            <td>720px</td>
+            <td>960px</td>
+            <td>1140px</td>
+            <td>1320px</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

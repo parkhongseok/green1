@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Errors</title>
+</head>
+<body>
+  <pre>
+    try : 실행할 코드 블록을 정의합니다 
+    catch : 오류를 처리하기 위한 코드 블록을 정의한다
+    finally : 결과에 관계없이 실행할 코드 블록을 정의한다 
+    throw : 사용자 정의 오류를 정의한다
+  </pre>
+  <mark id="err"></mark>
+
+  <script>
+    try{
+      adddddlert('실수');
+    }catch(err){
+      document.getElementById('err').innerHTML = err.message;
+    }
+  </script>
+
+
+
+  <h1>사용자 정의 오류</h1>
+  <p> 5와 10사이에 숫자를 쓰세요 </p>
+<!-- 라고 했는데 싫어 다른 거 쓸래 해서 발생하는 오류 -->
+<input type="text" id="demo">
+<button onclick="myFunction()">Test Input</button>
+<mark id="p01"></mark>
+
+
+
+
+<!--사용자 정의 오류 만들기-->
+<script>
+myFunction = () => {
+  const message = document.getElementById('p01');
+  //상수 메시지는 도큐먼트에서 p01이라는 아이디를 찾고,
+  message.innerHTML= ""; //초기화
+  let x = document.getElementById('demo').value;
+  // 변수 x는 document에서 아이디 demo의 값을 찾는다.
+}
+
+try{
+if(x.trim() == "") throw "is empty"; //비어있다면,
+if(isNaN(x)) throw 'is not a number'; //숫자가 아니라면,
+  x = Number(x);
+  if(x>10) throw "is too high"; //1이상일 떄
+  if(x<5) throw "is too low";
+
+}catch(err){
+  message.innerHTML = "Input" + err;
+}finally{
+  document.getElementById('demo').value = "";
+}
+
+
+</script>
+</body>
+</html>

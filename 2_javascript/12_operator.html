@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Assignment Opperator (=)</h1>
+  <pre>
+    - let x = '문자열'
+    - 종류
+    산술연산자 [+, *,...]
+    += : 기존 변수에 추가로 더해주는 것
+    -= : 기존 변수에서 뺍니다
+    /= : 기존 변수에서 나눠줍니다 
+    ** : 
+    
+  </pre>
+
+  <script>
+    let x = 10; 
+    x += 5;
+    document.write(
+      x + "<br>"
+    )
+  </script>
+
+<h1>Comparison operators 비교연산자</h1>
+<pre>
+  == : 일반적인 같음(타입을 고려하지 않음)
+  === : 타입까지 고려하여 엄격하게 같음
+  != : 같잖음
+  !== : 엄격하게 같지 않음
+  ? = : 삼항 연산자
+  >=, <= : 둘 중에 하나의 조건만 맞으면 true
+  - true나 false
+</pre>
+
+<script>
+  let a = 5;
+  document.write(
+    a != 5
+  )
+
+
+  let s = 6;
+  document.write(
+    s>= 6
+  )
+
+  let text1 = 'what a very ';
+  text1 += 'nice day';
+  document.write(
+    "<br>" + text1
+  )
+</script>
+
+<h1>Logical Operators</h1>
+<pre>
+  && logical and 두 조건이 성립해야지만 참
+  || logical or 둘 중 하나만 성립해도 참
+  ! logical not 같지 않으면 true
+</pre>
+
+<script>
+  let d = 6;
+  let f = 3;
+
+  document.write(
+    (d < 10 && f > 1) + "<br>" + 
+
+    (d < 10 && f > 1)
+  )
+</script>
+
+<h1>조건부 삼항 연산자</h1>
+<input type="text" id="age" value="18">
+<button onclick="myFunction()">
+try it
+</button>
+<mark id="demo"></mark>
+
+
+<script>
+  myFunction = () => {
+    let age = document.getElementById('age').value;
+    let vo = (age < 18) ? "too young" : "old enough";
+    document.getElementById('demo').innerHTML = vo + " you "
+  }
+</script>
+
+</body>
+</html>

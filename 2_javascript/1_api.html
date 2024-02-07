@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>api</title>
+</head>
+<body>
+<h1>Application Program Interface</h1>  
+<pre>
+- 애플리케이션 프로그래밍 인터페이스를 의미합니다
+- 웹브라우저의 기능을 확장하기 위함입니다
+- API종류
+[forms(양식), history(기록), storage(스토리지), Worker(작업자), Fetch(가져오기), 
+Geolocation(위치정보)]
+</pre>
+<h1>Geolocation(위치정보)</h1>
+<pre>
+사용자의 지리적 위치를 얻는데 사용합니다
+사용자의 승인이 없으면 해당 위치를 사용할수 없습니다
+위치정보는 스마트폰과 같이 gps가 탑재된 기기에서 가자 정확합니다
+- getCurrentPosition() : 사용자의 위치를 리턴하는데 사용합니다
+- watchPosition() : 사용자의 현재 위치를 리턴하고 움직일때 마다 업데이트된
+위치를 계속해서 리턴합니다.
+- clearWatch() : watchPosition()메소드를 중지 시킵니다
+</pre>
+
+<button onclick="getLocation()">위치정보</button>
+
+<p>
+  <mark id="demo">
+
+  </mark>
+</p>
+
+<script>
+  const x = document.getElementById("demo");
+  //상수 x는 도큐먼트에서 id demo를 찾고
+  getLocation = () => {
+    if (navigator.geolocation){
+      //만약 네비게이터에 지오로케이션 값이
+    navigator.geolocation.getCurrentPosition(showPosition);
+    //콜백함수로 showposition값을 얻고
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser";
+      //당신에 브라우저는 위치기반이 지원되지 않습니다
+    }
+  }
+
+  showPosition = (position) => {
+    x.innerHTML = "위도: " + position.coords.latitude +
+    "<br>경도: " + position.coords.longitude;
+  }
+</script>
+
+
+</body>
+</html>

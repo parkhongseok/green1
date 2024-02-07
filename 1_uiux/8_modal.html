@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  >
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  >
+  </script>
+  <title>component_4</title>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-primary" 
+      data-bs-toggle="modal"
+      data-bs-target="#myModal">
+      open
+    </button>
+
+    <h1>주의사항</h1>
+    <pre>
+      - add animation => .fade
+      - modal size => modal-lg, modal-sm 
+      - 화면 전체에 팝업창을 꽉 차게 하고 싶다면.. 그럴 리는 없겠지만..서도.. 
+        modal-dialog를 쓴 tag에 modal-fullscreen
+      - 팝업창에 스크롤바가 필요할 때는 아래의 클래스 추가
+        modal-dialog가 있는 tag에 modal-dialog-scrollable를 추가
+    </pre>
+
+
+      <!-- modal -->
+      <div class="modal fade" id="myModal">
+
+          <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                  <h4 class="modal-title">
+                    modal heading
+                  </h4>
+                  <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div><!--modal header-->
+
+
+                  <div class="modal-body">
+                    Voluptate nulla magna esse nulla cillum pariatur aliquip fugiat Lorem elit. Culpa deserunt eu dolore fugiat labore laboris commodo aliquip elit ea adipisicing est exercitation nisi. Fugiat laboris nulla excepteur voluptate ipsum est id deserunt proident quis deserunt enim ipsum. Et nostrud sit quis do. Ea anim fugiat commodo pariatur tempor commodo id est enim nisi. Ea magna id id est Lorem proident. Cillum laborum duis culpa ipsum laborum amet consequat est.
+
+Sint est sit duis dolor nulla eu Lorem. Nulla consequat eu esse ut minim laborum. Reprehenderit laborum velit incididunt sint.
+
+Qui labore irure fugiat irure labore irure occaecat. In enim sit Lorem adipisicing amet laborum nisi tempor duis ipsum ut occaecat exercitation. Esse Lorem deserunt velit cupidatat adipisicing fugiat esse voluptate reprehenderit sunt ipsum officia culpa ut. Deserunt proident non ex Lorem adipisicing aliquip non est et nostrud est irure magna. Mollit anim labore enim nostrud do nulla tempor dolore exercitation nostrud est Lorem anim. Deserunt officia culpa duis ex excepteur aute occaecat est reprehenderit Lorem ad.
+
+Voluptate voluptate Lorem magna officia ut enim ipsum nulla dolor fugiat aute. Ex nisi et aute laborum quis adipisicing laboris cupidatat nulla ullamco id. Irure voluptate ipsum tempor ut.
+                  </div><!--modal body-->
+                    
+                  <div class="modal-footer">
+
+                    <button class="btn btn-danger" data-bs-dismiss="modal">close</button>
+                    </div><!--modal footer-->
+
+
+
+
+
+            </div><!--modal content end-->
+
+          </div><!--modal dialog end-->
+
+      </div> <!--modal end-->
+    </div>
+  </div>
+</div>
+</body>
+</html>

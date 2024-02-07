@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link 
+  rel="stylesheet" 
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  >
+  <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  >
+  </script>
+  <title>component_4</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="my-3">form validation [양식(스테이크, 파스타 등) 검증]</h1>
+        <pre>
+          .was-validated을 전사용합니다.
+          - required를 붙여줍니다.
+        </pre>
+        <form action="/action.php" class="was-validated" method="get">
+          
+          <div class="my-3">
+            <label for="uname" class="form-label">이름 : </label>
+            <input type="text" class="form-control" id="uname" name="uname" required>
+            <!-- name은 db를 가져오는 역할을 해준다. 나중에 -->
+            <div class="valid-feedback">valid.</div>
+            <div class="invalid-feedback">내용을 채워주세요</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="pwd" class="form-label">
+              password
+            </label>
+            <input type="password"
+            class="form-control" id="pwd"
+            placeholder="enter password"
+            name="pswd"
+            required>
+            <div class="valid-feedback">valid.</div>
+            <div class="invalid-feedback">내용을 채워주세요</div>
+          </div>
+
+          <input type="submit" class="btn btn-outline-success" value="submit">
+
+        </form>
+      </div>
+    </div>
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>input Group</h1>
+    <pre>
+      - inline으로 inputgroup을 생성합니다.
+      - input-group-sm, lg
+      (버튼이랑 input을 합치고 싶을 때)
+    </pre>
+
+    <div class="input-group mb-3">
+      <button class="btn btn-outline-primary">
+        basic button
+      </button>
+      <input type="text" class="form-control" placeholder="some text">
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-3">
+    <h1>select</h1>
+    <select name="" id="" class="form-select form-select-lg">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+  </div>
+  <div class="col-md-3">
+
+<h1>Data List</h1>
+<form action="">
+  <label for="browser" class="form-label">
+    좋아하는 브아루저를 선택하세요.
+  </label>
+<input class="form-control" list="browsers" name="browser" id="browser">
+<datalist id="browsers">
+  <option value="Edge">
+  <option value="FireFox">
+  <option value="Chrome">
+  <option value="opera">
+  <option value="safari">
+</datalist> 
+<button type="submit" class="btn btn-primary mt-3">
+  전송
+</button>
+
+</form>
+
+  </div>
+  <div class="col-md-3">
+
+  </div>
+  <div class="col-md-3">
+
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+</body>
+</html>

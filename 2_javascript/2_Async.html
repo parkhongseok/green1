@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Async : 비동기</title>
+</head>
+<body>
+<h1>Callbacks</h1> 
+<pre>
+'나중에 다시 전화할께요'
+- 콜백은 다른 함수에 인수로 전달되는 함수 입니다
+- 이기술을 사용하면 함수가 다른 함수를 호출할수 있습니다
+- 콜백 함수는 다른 함수가 완료된후에 실행될수 있습니다
+- 함수는 호출된 순서대로 실행됩니다. 정의된 순서가 아닙니다
+- 콜백함수는 함수가 함수를 사용할때를 콜백함수라하며
+- 콜백함수가 빛나는 곳은 비동기 함수에서 입니다
+</pre>
+
+<p><mark id="q"></mark></p>
+<script>
+function myDisplayer(some) {//1)먼저실행 some parameter [매개변수]
+  document.getElementById('q').innerHTML = some;
+}
+
+function myfirst() {
+  myDisplayer('hello');//함수명(인수)
+}
+
+function mysecond() {
+  myDisplayer('goodbye');//함수명(인수)
+}
+
+//함수는 호출될때만 실행되는 코드블록입니다
+//스스로를 호출하는걸 재귀함수라 합니다
+myfirst();
+mysecond();
+</script>
+
+<h1>Asynchronous</h1>
+<pre>
+'I will finish later!'  
+- 다른 함수와 병렬로 실행되는 함수를 비동기라고 합니다
+좋은예는 setTimeout[경과후에]을 사용합니다
+setInterval[주기적]으로
+</pre>
+<p><mark id="w"></mark></p>
+<script>
+setTimeout(mySay, 3000);
+
+function mySay () {
+  document.getElementById('w').innerHTML = '여러분 반갑습니다';
+}
+</script>
+<h1>전자시계 만들기</h1>
+<pre>
+  객체지향언어 => 원시값(숫자, 문자열) 제외한 모든것이 객체
+  class = '현대자동차' object ='아이오닉'
+</pre>
+<h1 id="e"></h1>
+
+<script>
+
+function myTime() {
+  let d = new Date(); //변수D는 데이트객체
+  document.getElementById('e').innerHTML = 
+  d.getHours() + ":" +
+  d.getMinutes() + ":" +
+  d.getSeconds();
+}
+
+setInterval(myTime, 1000);
+</script>
+
+<h1>Promise</h1>
+  <pre>
+    'I promise a result' 결과를 약속합니다.
+    - Producing code [생성코드] 시간이 걸릴 수 있는 코드입니다.
+    - Consuming code [소비코드] 결과를 기다려야 하는 코드입니다.
+    promise는 생성코드와 소비코드를 연결하는 javascript 객체입니다.
+    (상속이 가능하다는 장점이 있다.)
+    - 생성코드가 결과를 얻으려면 아래의 두 콜백 중 하나를 호출해야 합니다. 
+    Success : myResolve(result value[결과값])
+    Error : myReject(error object[오류객체])
+
+  </pre>
+  <h2>Promise object properties</h2>
+  <pre>
+    자바스크립트 promise Object는 아래와 같습니다.
+    - pending (보류중) => 결과는 정의되지 않습니다.
+    - Fulfilled (이행됨) => 결과값이 나옵니다.
+    - Rejected (거부됨) => 오류객체가 나옵니다.
+
+    promise 객체는 state와 result라는 (상태와 결과라는) 두 가지 속성을 지원한다.
+
+    -.then() : 성공을 위한 콜백과 실패를 위한 콜백이라는 두 가지의 argument(인수)를 사용합니다. 
+    둘 다 필수 선택사항이기 때문에 실패에 대해서만 콜백을 추가할 수 있습니다. 
+
+    -es6(2015)년 버전에 도입되었다.
+  </pre>
+
+<p id="find"></p>
+
+<script>
+  function myD(some){
+    document.getElementById('find').innerHTML = some;
+  }
+  
+  let 약속해줘 = new Promise(function(myResolve, myReject){
+    let x = 0; //promise객체 안의 변수 값이 0이라는 부분이 중요하다.
+    
+    if (x == 0){ //만약에 x값이 0과 같다면
+      myResolve('OK');
+    }else{
+      myReject('Error')
+    }
+  })
+
+약속해줘.then(
+  function(value){myD(value);},
+  function(error){myD(error);}
+)
+
+
+
+</script>
+
+
+<h1>Async/Await</h1>
+<pre>
+  '비동기 및 대기를 사용하면 약속을 좀 더 쉽게 작성할 수 있습니다.'
+  async : 함수가 promise를 리턴하도록 만듭니다.
+  await : 함수가 promise를 기다리도록 만듭니다. 
+  (then을 필요 없게 만들어준다)
+  - 화살표함수에 사용 불가
+  - 문법은 async로 시작
+</pre>
+
+<h1 id="demo"></h1>
+<script>
+async function mySelect(){
+  let 또약속 = new Promise(function(resolve, reject){
+    resolve('기억해줘!')
+  });
+  document.getElementById('demo').innerHTML = await 또약속;
+}
+mySelect(); /*함수는 호출될 때만 실행되는 코드블럭이다.*/
+</script>
+</body>
+</html>
